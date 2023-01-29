@@ -6,7 +6,7 @@ const router = Router()
 router.get('/pessoas', pegaTodasAsPessoas)
 router.get('/pessoas/:id', pegaUmaPessoa)
 router.post('/pessoas', criaPessoa)
-router.put('/pessoas/:id', atualizaPessoa)
+router.put('/pessoas/:id', atualizaPessoa)  
 router.delete('/pessoas/:id', apagaPessoa)
 
 module.exports = router
