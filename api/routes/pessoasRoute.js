@@ -1,16 +1,19 @@
 const { Router } = require('express')
-const { pegaTodasAsPessoas, pegaUmaPessoa, criaPessoa, atualizaPessoa, apagaPessoa, pegaUmaMatricula, criaMatricula, atualizaMatricula, apagaMatricula } = require('../controllers/PessoaController')
+const { pegaTodasAsPessoas, pegaUmaPessoa, criaPessoa, atualizaPessoa, apagaPessoa, pegaUmaMatricula, criaMatricula, atualizaMatricula, apagaMatricula, restauraPessoa, restauraMatricula } = require('../controllers/PessoaController')
 
 const router = Router()
 
-router.get('/pessoas', pegaTodasAsPessoas)
-router.get('/pessoas/:id', pegaUmaPessoa)
-router.post('/pessoas', criaPessoa)
-router.put('/pessoas/:id', atualizaPessoa)  
-router.delete('/pessoas/:id', apagaPessoa)
-router.get('/pessoas/:estudanteId/matricula/:matriculaId', pegaUmaMatricula)
-router.post('/pessoas/:estudanteId/matricula', criaMatricula)
-router.put('/pessoas/:estudanteId/matricula/:matriculaId', atualizaMatricula)
-router.delete('/pessoas/:estudanteId/matricula/:matriculaId', apagaMatricula)
+router
+  .get('/pessoas', pegaTodasAsPessoas)
+  .get('/pessoas/:id', pegaUmaPessoa)
+  .post('/pessoas', criaPessoa)
+  .put('/pessoas/:id', atualizaPessoa)
+  .delete('/pessoas/:id', apagaPessoa)
+  .post('/pessoas/:id/restaura', restauraPessoa)
+  .get('/pessoas/:estudanteId/matricula/:matriculaId', pegaUmaMatricula)
+  .post('/pessoas/:estudanteId/matricula', criaMatricula)
+  .put('/pessoas/:estudanteId/matricula/:matriculaId', atualizaMatricula)
+  .delete('/pessoas/:estudanteId/matricula/:matriculaId', apagaMatricula)
+  .post('/pessoas/:estudanteId/matricula/:matriculaId/restaura', restauraMatricula)
 
 module.exports = router
