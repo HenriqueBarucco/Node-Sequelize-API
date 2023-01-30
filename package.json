@@ -5,6 +5,7 @@
   "main": "./api/index.js",
   "scripts": {
     "start": "nodemon ./api/index.js",
+    "lint": "eslint api --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -19,6 +20,7 @@
     "sequelize-cli": "^6.6.0"
   },
   "devDependencies": {
+    "eslint": "^8.33.0",
     "nodemon": "^2.0.20"
   }
 }

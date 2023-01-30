@@ -1,8 +1,8 @@
-'use strict';
+'use strict'
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up(queryInterface, Sequelize) {
+  async up(queryInterface) {
     await queryInterface.bulkInsert('Pessoas', [{
       nome: 'Ana Souza',
       ativo: true,
@@ -50,10 +50,10 @@ module.exports = {
       role: 'docente',
       createdAt: new Date(),
       updatedAt: new Date()
-    }], {});
+    }], {})
   },
 
-  async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete('People', null, {});
+  async down(queryInterface) {
+    await queryInterface.bulkDelete('Pessoas', null, {})
   }
-};
+}
