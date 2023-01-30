@@ -1,10 +1,11 @@
 const { Router } = require('express')
-const { pegaTodasAsPessoas, pegaUmaPessoa, criaPessoa, atualizaPessoa, apagaPessoa, pegaUmaMatricula, criaMatricula, atualizaMatricula, apagaMatricula, restauraPessoa, restauraMatricula } = require('../controllers/PessoaController')
+const { pegaTodasAsPessoas, pegaUmaPessoa, criaPessoa, atualizaPessoa, apagaPessoa, pegaUmaMatricula, criaMatricula, atualizaMatricula, apagaMatricula, restauraPessoa, restauraMatricula, pegaPessoasAtivas } = require('../controllers/PessoaController')
 
 const router = Router()
 
 router
-  .get('/pessoas', pegaTodasAsPessoas)
+  .get('/pessoas', pegaPessoasAtivas)
+  .get('/pessoas/todos', pegaTodasAsPessoas)
   .get('/pessoas/:id', pegaUmaPessoa)
   .post('/pessoas', criaPessoa)
   .put('/pessoas/:id', atualizaPessoa)
