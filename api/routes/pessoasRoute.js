@@ -1,5 +1,5 @@
 const { Router } = require('express')
-const { pegaTodasAsPessoas, pegaUmaPessoa, criaPessoa, atualizaPessoa, apagaPessoa, pegaUmaMatricula, criaMatricula, atualizaMatricula, apagaMatricula, restauraPessoa, restauraMatricula, pegaPessoasAtivas } = require('../controllers/PessoaController')
+const { pegaTodasAsPessoas, pegaUmaPessoa, criaPessoa, atualizaPessoa, apagaPessoa, pegaUmaMatricula, criaMatricula, atualizaMatricula, apagaMatricula, restauraPessoa, restauraMatricula, pegaPessoasAtivas, pegaMatriculas, pegaMatriculasPorTurma, pegaTurmasLotadas } = require('../controllers/PessoaController')
 
 const router = Router()
 
@@ -7,6 +7,9 @@ router
   .get('/pessoas', pegaPessoasAtivas)
   .get('/pessoas/todos', pegaTodasAsPessoas)
   .get('/pessoas/:id', pegaUmaPessoa)
+  .get('/pessoas/:estudanteId/matricula', pegaMatriculas)
+  .get('/pessoas/matricula/:turmaId/confirmadas', pegaMatriculasPorTurma)
+  .get('/pessoas/matricula/lotada', pegaTurmasLotadas)
   .post('/pessoas', criaPessoa)
   .put('/pessoas/:id', atualizaPessoa)
   .delete('/pessoas/:id', apagaPessoa)
