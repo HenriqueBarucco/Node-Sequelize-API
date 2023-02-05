@@ -5,11 +5,10 @@ const niveis = require('./niveisRoute')
 const turmas = require('./turmasRoute')
 
 module.exports = app => {
-  app.use(bodyParser.json())
-  app.use(
-    bodyParser.json(),
-    pessoas,
-    niveis,
-    turmas
-  )
+    app.use(
+        bodyParser.json(),
+        pessoas,
+        niveis,
+        turmas
+    )
 }
